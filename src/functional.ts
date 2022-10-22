@@ -1,11 +1,11 @@
 import { isRef } from '@vue/reactivity'
-import { proxyKeys } from './common'
+import { prototype_proxy } from './common'
 export function createFunctional(raw: any, readonly: boolean): any {
   if (!isRef(raw)) return raw
   const fn = () => raw.value
-
+  
   const nativeFunction = Object.fromEntries(
-    proxyKeys.map((key) => [
+    prototype_proxy.map((key) => [
       key,
       (target: any, ...args: any[]) => (Reflect[key] as any)(raw, ...args),
     ])

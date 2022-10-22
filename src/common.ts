@@ -1,4 +1,5 @@
-export const proxyKeys = [
+// 代理原型属性，避免丢失
+export const prototype_proxy = [
   'construct',
   'defineProperty',
   'deleteProperty',
