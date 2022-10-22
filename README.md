@@ -42,7 +42,7 @@ build({
   ],
 })
 ```
-#### TypeScript Type 
+## TypeScript Type 
 
 ```jsonc
 // tsconfig.json
