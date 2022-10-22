@@ -15,6 +15,6 @@ export default createUnplugin(options => ({
     return id.endsWith('main.ts')
   },
   transform(code) {
-    return code.replace('__UNPLUGIN__', `Hello Unplugin! ${options}`)
+    return code.replace('__UNPLUGIN__', `export * from 'unplugin-vue-ref'`)
   },
 }))
