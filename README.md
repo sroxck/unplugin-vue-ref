@@ -42,6 +42,17 @@ build({
   ],
 })
 ```
+
+## Nuxt
+```ts
+// nuxt.config.js
+export default {
+  buildModules: [
+    ['unplugin-vue-ref/nuxt', { /* options */ }],
+  ],
+}
+```
+
 ## TypeScript Type 
 
 ```jsonc
