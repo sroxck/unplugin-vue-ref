@@ -1,17 +1,13 @@
 import { fileURLToPath } from 'url'
 import { createServer } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import intermediary from '../plugins/index'
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-
+import ViteRefPlugin from 'unplugin-vue-ref/vite'
 (async () => {
   const server = await createServer({
     configFile: false,
     mode:'development',
-    plugins: [vue(),intermediary({
-      dir:'/playground/test',
-      output:'plugin-output.ts'
-    })],
+    plugins: [vue(),ViteRefPlugin()],
     root: __dirname,
     server: {
       watch: {

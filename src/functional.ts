@@ -15,7 +15,7 @@ export function createFunctional(raw: any, readonly: boolean): any {
     ...nativeFunction,
     get(target, key) {
       if (!readonly && key === 'set') {
-        return (value: any) => (raw.value = value)
+        return (value: any) => (raw.value = value) 
       } else if (key === '__raw_ref') {
         return rawToRef(raw)
       } else {

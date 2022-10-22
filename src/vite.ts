@@ -8,7 +8,7 @@ export default (): Plugin => ({
   config() {
     return {
       optimizeDeps: {
-        esbuildOptions: {
+        esbuildOptions: { 
           plugins: [esbuildPlugin()],
         },
       },
