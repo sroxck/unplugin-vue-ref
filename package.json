@@ -1,0 +1,80 @@
+{
+  "name": "unplugin-vue-ref",
+  "version": "0.0.1",
+  "files": [
+    "dist",
+    "types.d.ts"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "types.d.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./vite": {
+      "require": "./dist/vite.js",
+      "import": "./dist/vite.mjs"
+    },
+    "./rollup": {
+      "require": "./dist/rollup.js",
+      "import": "./dist/rollup.mjs"
+    },
+    "./esbuild": {
+      "require": "./dist/esbuild.js",
+      "import": "./dist/esbuild.mjs"
+    },
+    "./types": "./types.d.ts",
+    "./*": "./*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && tsx scripts/postbuild.mts",
+    "test": "vitest",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.1",
+    "unplugin": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@vue/reactivity": "^3.2.41",
+    "@vue/shared": "^3.2.41",
+    "bumpp": "^8.2.1",
+    "esbuild": "^0.15.11",
+    "expect-type": "^0.14.2",
+    "fast-glob": "^3.2.12",
+    "prettier": "^2.7.1",
+    "rollup": "^2.79.1",
+    "tsup": "^6.2.3",
+    "tsx": "^3.10.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8",
+    "vitest": "^0.24.3",
+    "vue": "^3.2.41"
+  },
+  "engines": {
+    "node": ">=14.19.0"
+  }
+}
